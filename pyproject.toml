@@ -1,9 +1,11 @@
 [tool.poetry]
 name = "fastapi-tryout"
 version = "0.1.0"
-description = ""
+description = "Getting a feel for FastAPI and Pydantic"
+repository = "https://github.com/ianfoo/fastapi-tryout"
 authors = ["Ian Molee <imolee@gmail.com>"]
 readme = "README.md"
+license = "MIT"
 packages = [{include = "fastapi_tryout"}]
 
 [tool.poetry.dependencies]
