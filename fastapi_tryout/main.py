@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 from enum import Enum
-from typing import Annotated, Optional
+from typing import Annotated, Optional, cast
 
 from fastapi import FastAPI
 from mysql.connector import connect
@@ -66,7 +66,7 @@ class Database:
     def __enter__(
         self,
         conn_args: dict[str, str | int] = {
-            "database": "test",
+            "database": "fastapi_tryout",
             "unix_socket": "/tmp/mysql.sock",
         },
     ):
@@ -97,7 +97,7 @@ def create_account(request: CreateAccountRequest) -> int:
         cnx.commit()
 
         account_id = cursor.lastrowid
-        return account_id
+        return cast(int, account_id)
 
 
 def get_account(id: int) -> Optional[Account]:
