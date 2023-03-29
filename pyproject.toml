@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fastapi-tryout"
+version = "0.1.0"
+description = ""
+authors = ["Ian Molee <imolee@gmail.com>"]
+readme = "README.md"
+packages = [{include = "fastapi_tryout"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.95.0"
+uvicorn = {extras = ["standard"], version = "^0.21.1"}
+mysql-connector = "^2.2.9"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
